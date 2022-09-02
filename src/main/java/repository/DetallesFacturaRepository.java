@@ -25,7 +25,8 @@ import model.Productos;
  */
 public class DetallesFacturaRepository {
     
-    
+    ProductosRepository repo = new ProductosRepository();
+    FacturaRepository repof=new FacturaRepository();
     public List<DetallesFactura> getAll(){
         conexion con = new conexion();
         Connection conect = con.conect;
@@ -37,8 +38,10 @@ public class DetallesFacturaRepository {
             while (rs.next()) {
                 DetallesFactura dfactura = new DetallesFactura();
                 dfactura.setId(rs.getInt(1));
-                dfactura.setIdFactura((Factura) rs.getObject(2));
-                dfactura.setCodProducto((Productos) rs.getObject(3));
+                Productos product=repo.getbyId(rs.getInt(3));
+                Factura fact=repof.getbyId(rs.getInt(2));
+                dfactura.setIdFactura(fact);
+                dfactura.setCodProducto(product);
                 dfactura.setCantidad(rs.getInt(4));
                 dfactura.setTotal(rs.getDouble(5));
               

@@ -16,11 +16,11 @@ import javax.swing.JOptionPane;
  *
  * @author MELLO
  */
-public class LoginControlador implements ActionListener{
+public class LoginControlador {
     
     public Empleados ems =new Empleados();
     EmpleadosControlador empleadoscontrl = new EmpleadosControlador();
-    Login login;
+
     
     public void loginAccess(String usuario, String contraseña, JFrame ventana){
         if (usuario.isEmpty() || contraseña.isEmpty()) {
@@ -45,8 +45,5 @@ public class LoginControlador implements ActionListener{
         }
 }
 
-    @Override
-    public void actionPerformed(ActionEvent arg0) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    
 }

@@ -63,10 +63,10 @@ public class EmpleadosRepository {
                 empleado.setIdCedula(rs.getInt(1));
                 empleado.setNombreEmpleado(rs.getString(2));
                 empleado.setCargo(rs.getString(3));
-                empleado.setFechaNacimiento(rs.getDate(3));
-                empleado.setDireccion(rs.getString(4));
-                empleado.setTelefono(rs.getString(5));
-                empleado.setContrasena(rs.getString(3));
+                empleado.setFechaNacimiento(rs.getDate(4));
+                empleado.setDireccion(rs.getString(5));
+                empleado.setTelefono(rs.getString(6));
+                empleado.setContrasena(rs.getString(7));
 
             }
             conect.close();
@@ -151,6 +151,30 @@ public class EmpleadosRepository {
    }
    public Empleados loginEmpleado(String nombre, String password){
         Empleados empleado=new Empleados();
+        conexion con = new conexion();
+        Connection conect = con.conect;
+        PreparedStatement pst;
+        try {
+            pst = conect.prepareStatement("select * from empleados where nombreEmpleado=? and contrasena=?");
+            pst.setString(1, nombre);
+            pst.setString(2, password);
+            
+            ResultSet rs = pst.executeQuery();
+            if (rs.next()) {
+
+                empleado.setIdCedula(rs.getInt(1));
+                empleado.setNombreEmpleado(rs.getString(2));
+                empleado.setCargo(rs.getString(3));
+                empleado.setFechaNacimiento(rs.getDate(4));
+                empleado.setDireccion(rs.getString(5));
+                empleado.setTelefono(rs.getString(6));
+                empleado.setContrasena(rs.getString(7));
+
+            }
+            conect.close();
+        } catch (SQLException ex) {
+            System.out.println("EX" + ex);
+        }
         return empleado;
     }
     

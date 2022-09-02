@@ -25,7 +25,7 @@ import model.Productos;
  */
 public class FacturaRepository {
     
-     
+     ClienteRepository repoclient=new ClienteRepository();
     
     public List<Factura> getAll(){
         conexion con = new conexion();
@@ -38,7 +38,8 @@ public class FacturaRepository {
             while (rs.next()) {
                 Factura factura = new Factura();
                 factura.setId(rs.getInt(1));
-                factura.setIdCliente((Cliente) rs.getObject(2));
+                Cliente client=repoclient.getbyId(rs.getInt(2));
+                factura.setIdCliente(client);
                 factura.setFecha(rs.getDate(3));
                 factura.setTotalFactura(rs.getDouble(4));
                 factura.setGanancias(rs.getInt(5));
