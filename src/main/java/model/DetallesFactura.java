@@ -17,7 +17,6 @@ public class DetallesFactura  {
     
     private Integer cantidad;
     
-    
     private Double total;
     
     private Factura idFactura;
