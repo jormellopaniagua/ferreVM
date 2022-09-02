@@ -5,9 +5,11 @@
  */
 package repository;
 
+import java.util.ArrayList;
 import model.Factura;
 import java.util.Date;
 import java.util.List;
+import model.DetallesFactura;
 
 
 /**
@@ -19,23 +21,23 @@ public class FacturaRepository {
      
     
     public List<Factura> getAll(){
-        
+        List<Factura> facturas= new ArrayList<Factura>();
         return facturas;
     }
     public Factura getbyId(Integer id){
-        
+        Factura factura=new Factura();
         return factura;
     }
     public List<Factura> getbyFecha(Date date){
-        
-        return factura;
+        List<Factura> facturas= new ArrayList<Factura>();
+        return facturas;
     }
     public void insert(Factura f){
         
     }
     public List<Factura> getbyMY(Integer mes, Integer anio){
-        
-        return factura;
+        List<Factura> facturas= new ArrayList<Factura>();
+        return facturas;
     
     }  
 }

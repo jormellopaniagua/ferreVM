@@ -5,6 +5,9 @@
  */
 package sena.ferreteria;
 
+import java.util.List;
+import model.Cliente;
+import repository.ClienteRepository;
 import repository.conexion;
 
 /**
@@ -81,7 +84,13 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        conexion com=new conexion();
+        ClienteRepository cliente=new ClienteRepository();
+        Cliente client=new Cliente();
+        client.setId(1);
+        
+        cliente.eliminar(client);
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

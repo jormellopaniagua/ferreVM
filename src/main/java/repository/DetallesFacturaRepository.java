@@ -5,6 +5,7 @@
  */
 package repository;
 
+import java.util.ArrayList;
 import model.DetallesFactura;
 import model.Factura;
 import java.util.Date;
@@ -19,11 +20,11 @@ public class DetallesFacturaRepository {
     
     
     public List<DetallesFactura> getAll(){
-        
+        List<DetallesFactura> dfacturas= new ArrayList<DetallesFactura>();
         return dfacturas;
     }
     public DetallesFactura getbyId(Integer id){
-        
+        DetallesFactura dfactura=new DetallesFactura();
         return dfactura;
     }
     

@@ -5,9 +5,11 @@
  */
 package repository;
 
+import java.util.ArrayList;
 import model.Empleados;
 import model.Productos;
 import java.util.List;
+import model.DetallesFactura;
 
 /**
  *
@@ -18,15 +20,15 @@ public class EmpleadosRepository {
     
     
     public List<Empleados> getAll(){
-        
+        List<Empleados> empleados= new ArrayList<Empleados>();
         return empleados;
     }
      public Empleados getbyId(Integer id){
-        
+        Empleados empleado=new Empleados();
         return empleado;
     }
     public Empleados loginEmpleado(String nombre, String password){
-        
+        Empleados empleado=new Empleados();
         return empleado;
     }
     
